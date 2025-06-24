@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <title>Landing Pages que Convertem | VmSoftware</title>
+    <meta name="description" content="Criamos landing pages otimizadas que aumentam suas vendas em até 3x com copy, design e testes A/B.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F9FAFB',
+                        gradientStart: '#6366F1',
+                        gradientEnd: '#8B5CF6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .client-logo:hover .client-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .client-info {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">
+                    Vm
+                </div>
+                <span class="text-xl font-bold"><span class="gradient-text">Vm</span>Software</span>
+            </div>
+            <a href="https://www.instagram.com/vm_software/" target="_blank" class="flex items-center text-gray-600 hover:text-indigo-600 transition-colors">
+                <i class="fab fa-instagram text-xl mr-2"></i>
+                <span class="font-medium hidden sm:inline">@VmSoftware</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-indigo-100 to-purple-100 opacity-50"></div>
+        <div class="container mx-auto px-4 py-16 md:py-24 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div class="bg-white bg-opacity-70 backdrop-blur-sm rounded-xl p-6 shadow-sm inline-block mb-4">
+                        <span class="text-sm font-semibold text-indigo-600">OFERTA RELÂMPAGO</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                        <span class="gradient-text">Landing Pages</span> que Convertem de Verdade
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-gray-600 mb-6">
+                        Aumente suas vendas em até 3x com páginas otimizadas usando o melhor método de copy, design e teste A/B
+                    </h2>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm mb-8">
+                        <div class="flex items-center mb-4">
+                            <span class="text-gray-500 line-through mr-2">R$ 1.700</span>
+                            <span class="text-2xl font-bold text-indigo-600">R$ 1.070</span>
+                            <span class="ml-2 bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded">37% OFF</span>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600 mb-2">Oferta válida por:</p>
+                            <div id="countdown" class="flex gap-2">
+                                <div class="bg-indigo-100 text-indigo-800 rounded-lg p-2 text-center w-16">
+                                    <div class="text-2xl font-bold" id="days">00</div>
+                                    <div class="text-xs">Dias</div>
+                                </div>
+                                <div class="bg-indigo-100 text-indigo-800 rounded-lg p-2 text-center w-16">
+                                    <div class="text-2xl font-bold" id="hours">00</div>
+                                    <div class="text-xs">Horas</div>
+                                </div>
+                                <div class="bg-indigo-100 text-indigo-800 rounded-lg p-2 text-center w-16">
+                                    <div class="text-2xl font-bold" id="minutes">00</div>
+                                    <div class="text-xs">Min</div>
+                                </div>
+                                <div class="bg-indigo-100 text-indigo-800 rounded-lg p-2 text-center w-16">
+                                    <div class="text-2xl font-bold" id="seconds">00</div>
+                                    <div class="text-xs">Seg</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#form" class="gradient-bg text-white font-bold py-3 px-6 rounded-lg hover:shadow-lg transition-all duration-300 inline-block w-full text-center pulse-animation">
+                            Quero Minha LP Agora!
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="flex -space-x-2 mr-4">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/12.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">+120 clientes</span> já aumentaram suas vendas com nossas LPs
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-4 rounded-xl shadow-lg floating">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Landing Page Example" class="rounded-lg shadow-sm border border-gray-200">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Method Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Nosso Método Comprovado</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Um processo científico para criar landing pages que realmente convertem</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Pesquisa Profunda</h3>
+                    <p class="text-gray-600">Analisamos seu público-alvo e concorrentes para identificar oportunidades únicas de conversão.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Copy & Design Estratégico</h3>
+                    <p class="text-gray-600">Criamos textos persuasivos e designs que guiam o visitante pela jornada de compra de forma natural.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Otimização Contínua</h3>
+                    <p class="text-gray-600">Testamos diferentes versões para identificar o que funciona melhor e refinamos continuamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Resultados que Você Pode Esperar</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Veja o que nossas landing pages podem fazer pelo seu negócio</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="flex items-start mb-4">
+                        <div class="gradient-bg text-white p-2 rounded-lg mr-4">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Aumento de Conversão</h3>
+                            <p class="text-gray-600">Clientes relatam em média <span class="font-bold text-indigo-600">45% mais conversões</span> após implementação.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="flex items-start mb-4">
+                        <div class="gradient-bg text-white p-2 rounded-lg mr-4">
+                            <i class="fas fa-stopwatch text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Tempo de Desenvolvimento</h3>
+                            <p class="text-gray-600">Entrega em <span class="font-bold text-indigo-600">7 dias úteis</span> para a primeira versão da sua LP.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="flex items-start mb-4">
+                        <div class="gradient-bg text-white p-2 rounded-lg mr-4">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Engajamento</h3>
+                            <p class="text-gray-600">Até <span class="font-bold text-indigo-600">30% mais tempo</span> gasto na página pelos visitantes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="flex items-start mb-4">
+                        <div class="gradient-bg text-white p-2 rounded-lg mr-4">
+                            <i class="fas fa-hand-holding-usd text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">ROI Garantido</h3>
+                            <p class="text-gray-600"><span class="font-bold text-indigo-600">Satisfação garantida</span> ou refazemos gratuitamente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-8">O que nossos clientes dizem</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Ana Silva">
+                            <div>
+                                <h4 class="font-bold">Ana Silva</h4>
+                                <p class="text-sm text-gray-600">CEO, Boutique Virtual</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"Nossa taxa de conversão aumentou 52% após implementar a LP criada pela VmSoftware. O investimento valeu cada centavo!"</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/54.jpg" alt="Carlos Mendes">
+                            <div>
+                                <h4 class="font-bold">Carlos Mendes</h4>
+                                <p class="text-sm text-gray-600">Diretor, Academia Online</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"O processo foi incrivelmente profissional. Eles entenderam exatamente o que precisávamos e entregaram além das expectativas."</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Juliana Costa">
+                            <div>
+                                <h4 class="font-bold">Juliana Costa</h4>
+                                <p class="text-sm text-gray-600">Marketing, Consultoria</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"Finalmente encontrei uma equipe que realmente entende de conversão. Os testes A/B que fizeram revelaram insights valiosos para nosso negócio."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl overflow-hidden shadow-lg">
+                <div class="md:flex">
+                    <div class="md:w-1/2 gradient-bg text-white p-8 md:p-12">
+                        <h2 class="text-2xl font-bold mb-4">Pronto para transformar suas vendas?</h2>
+                        <p class="mb-6">Preencha o formulário ao lado e nossa equipe entrará em contato em até 2 horas úteis para discutir seu projeto.</p>
+                        
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-6">
+                            <h3 class="font-bold mb-2">Oferta Relâmpago</h3>
+                            <div class="flex items-center">
+                                <span class="text-xl font-bold mr-2">R$ 1.070</span>
+                                <span class="text-sm line-through opacity-70">R$ 1.700</span>
+                                <span class="ml-auto bg-white text-indigo-600 text-xs font-bold px-2 py-1 rounded">37% OFF</span>
+                            </div>
+                            <div class="mt-2">
+                                <p class="text-sm">Válido até <span class="font-bold">08/07/2025</span></p>
+                                <div class="flex items-center mt-2">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    <span id="countdown2" class="text-sm">00d 00h 00m 00s</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-white text-indigo-600 p-2 rounded-full mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <p class="text-sm">Satisfação garantida ou seu dinheiro de volta</p>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 bg-white p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-6">Solicite sua Landing Page</h3>
+                        
+                        <form id="leadForm" class="space-y-4">
+                            <div>
+                                <label for="area" class="block text-sm font-medium text-gray-700 mb-1">Área de Atuação*</label>
+                                <input type="text" id="area" name="area" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            
+                            <div>
+                                <label for="product" class="block text-sm font-medium text-gray-700 mb-1">Produto/Serviço*</label>
+                                <input type="text" id="product" name="product" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            
+                            <div>
+                                <label for="objective" class="block text-sm font-medium text-gray-700 mb-1">Objetivo Principal*</label>
+                                <select id="objective" name="objective" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                    <option value="">Selecione...</option>
+                                    <option value="Conversão de Venda">Conversão de Venda</option>
+                                    <option value="Captação de Leads">Captação de Leads</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Seu Nome*</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail*</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefone/WhatsApp*</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            
+                            <button type="submit" class="w-full gradient-bg text-white font-bold py-3 px-6 rounded-lg hover:shadow-lg transition-all duration-300">
+                                Quero Minha LP Agora!
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Alguns de Nossos Clientes</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Empresas que confiaram em nosso método e obtiveram resultados</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                <div class="client-logo bg-white p-6 rounded-xl shadow-sm flex items-center justify-center relative">
+                    <img src="https://via.placeholder.com/120x60?text=TechNova" alt="TechNova" class="h-10 object-contain">
+                    <div class="client-info absolute bottom-full left-0 right-0 bg-white p-4 rounded-lg shadow-lg mb-2 hidden md:block">
+                        <p class="text-sm font-semibold">+48% conversões</p>
+                        <p class="text-xs text-gray-600">Soluções em TI</p>
+                    </div>
+                </div>
+                
+                <div class="client-logo bg-white p-6 rounded-xl shadow-sm flex items-center justify-center relative">
+                    <img src="https://via.placeholder.com/120x60?text=GreenLife" alt="GreenLife" class="h-10 object-contain">
+                    <div class="client-info absolute bottom-full left-0 right-0 bg-white p-4 rounded-lg shadow-lg mb-2 hidden md:block">
+                        <p class="text-sm font-semibold">+35% leads qualificados</p>
+                        <p class="text-xs text-gray-600">Produtos sustentáveis</p>
+                    </div>
+                </div>
+                
+                <div class="client-logo bg-white p-6 rounded-xl shadow-sm flex items-center justify-center relative">
+                    <img src="https://via.placeholder.com/120x60?text=FinMax" alt="FinMax" class="h-10 object-contain">
+                    <div class="client-info absolute bottom-full left-0 right-0 bg-white p-4 rounded-lg shadow-lg mb-2 hidden md:block">
+                        <p class="text-sm font-semibold">+62% taxa de cliques</p>
+                        <p class="text-xs text-gray-600">Consultoria financeira</p>
+                    </div>
+                </div>
+                
+                <div class="client-logo bg-white p-6 rounded-xl shadow-sm flex items-center justify-center relative">
+                    <img src="https://via.placeholder.com/120x60?text=EduPlus" alt="EduPlus" class="h-10 object-contain">
+                    <div class="client-info absolute bottom-full left-0 right-0 bg-white p-4 rounded-lg shadow-lg mb-2 hidden md:block">
+                        <p class="text-sm font-semibold">+40% vendas</p>
+                        <p class="text-xs text-gray-600">Cursos online</p>
+                    </div>
+                </div>
+                
+                <div class="client-logo bg-white p-6 rounded-xl shadow-sm flex items-center justify-center relative">
+                    <img src="https://via.placeholder.com/120x60?text=StyleHub" alt="StyleHub" class="h-10 object-contain">
+                    <div class="client-info absolute bottom-full left-0 right-0 bg-white p-4 rounded-lg shadow-lg mb-2 hidden md:block">
+                        <p class="text-sm font-semibold">+55% engajamento</p>
+                        <p class="text-xs text-gray-600">Moda e acessórios</p>
+                    </div>
+                </div>
+                
+                <div class="client-logo bg-white p-6 rounded-xl shadow-sm flex items-center justify-center relative">
+                    <img src="https://via.placeholder.com/120x60?text=HealthCare+" alt="HealthCare+" class="h-10 object-contain">
+                    <div class="client-info absolute bottom-full left-0 right-0 bg-white p-4 rounded-lg shadow-lg mb-2 hidden md:block">
+                        <p class="text-sm font-semibold">+30% conversão</p>
+                        <p class="text-xs text-gray-600">Produtos de saúde</p>
+                    </div>
+                </div>
+                
+                <div class="client-logo bg-white p-6 rounded-xl shadow-sm flex items-center justify-center relative">
+                    <img src="https://via.placeholder.com/120x60?text=PrimeRealty" alt="PrimeRealty" class="h-10 object-contain">
+                    <div class="client-info absolute bottom-full left-0 right-0 bg-white p-4 rounded-lg shadow-lg mb-2 hidden md:block">
+                        <p class="text-sm font-semibold">+42% leads</p>
+                        <p class="text-xs text-gray-600">Imobiliária premium</p>
+                    </div>
+                </div>
+                
+                <div class="client-logo bg-white p-6 rounded-xl shadow-sm flex items-center justify-center relative">
+                    <img src="https://via.placeholder.com/120x60?text=FoodDeluxe" alt="FoodDeluxe" class="h-10 object-contain">
+                    <div class="client-info absolute bottom-full left-0 right-0 bg-white p-4 rounded-lg shadow-lg mb-2 hidden md:block">
+                        <p class="text-sm font-semibold">+50% vendas</p>
+                        <p class="text-xs text-gray-600">Gastronomia premium</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Não Deixe Essa Oportunidade Passar!</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Sua landing page de alta conversão por apenas R$ 1.070 (valor normal R$ 1.700)</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span id="countdown3" class="font-medium">00d 00h 00m 00s</span>
+                    </div>
+                </div>
+                
+                <a href="#form" class="bg-white text-indigo-600 font-bold py-3 px-6 rounded-lg hover:shadow-lg transition-all duration-300 inline-block">
+                    Quero Aproveitar Agora!
+                </a>
+            </div>
+            
+            <div class="mt-8 bg-white bg-opacity-20 rounded-lg p-4 inline-block">
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt mr-2"></i>
+                    <span>Satisfação garantida </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Perguntas Frequentes</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Tire suas dúvidas sobre nossas landing pages</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center">
+                        <span class="font-medium">Quanto tempo leva para desenvolver minha landing page?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">O tempo médio de entrega é de 7 dias úteis para a primeira versão da sua landing page. Após sua avaliação, fazemos os ajustes necessários em até 3 dias úteis.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center">
+                        <span class="font-medium">Preciso fornecer algum material?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Sim, precisamos que você nos forneça informações sobre seu produto/serviço, público-alvo, objetivos e qualquer material de marketing existente (textos, imagens, vídeos, etc.) que possa ser útil.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center">
+                        <span class="font-medium">Como funciona a garantia de satisfação?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Se você não estiver satisfeito com o resultado final, faremos quantas alterações forem necessárias para atender suas expectativas. Caso ainda assim não esteja satisfeito, devolveremos seu dinheiro.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center">
+                        <span class="font-medium">Vocês fazem a hospedagem da landing page?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">O pacote básico inclui apenas o desenvolvimento da LP. Oferecemos como serviço adicional a hospedagem em nosso servidor otimizado com taxa de disponibilidade de 99,9%.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center">
+                        <span class="font-medium">Posso solicitar alterações após a entrega?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Sim, incluímos 2 rodadas de alterações gratuitas no pacote. Alterações adicionais são cobradas conforme a complexidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">
+                            Vm
+                        </div>
+                        <span class="text-xl font-bold"><span class="gradient-text">Vm</span>Software</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Landing pages que realmente convertem e aumentam suas vendas.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/VmSoftware" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="#form" class="text-gray-400 hover:text-white transition-colors">Solicitar LP</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Método</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Clientes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Termos de Uso</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Política de Privacidade</a></li>
+                        <li class="text-gray-400">CNPJ: 59.134.440/0001-84</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>contato@vmsoftware.com</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            <span>(11) 98765-4321</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2023 VmSoftware. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5511987654321?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20landing%20pages%20da%20VmSoftware" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition-colors z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-md mx-4 relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-green-500 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Formulário Enviado!</h3>
+                <p class="text-gray-600 mb-6">Em breve nossa equipe entrará em contato pelo WhatsApp para discutir seu projeto.</p>
+                <a href="https://wa.me/5511987654321" target="_blank" class="bg-green-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 transition-colors inline-block">
+                    Abrir WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const endDate = new Date('2025-07-08T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = endDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+            
+            document.getElementById('countdown2').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            document.getElementById('countdown3').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Form Submission
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const area = document.getElementById('area').value;
+            const product = document.getElementById('product').value;
+            const objective = document.getElementById('objective').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Prepare WhatsApp message
+            const message = `Olá VmSoftware!%0A%0A*Solicitação de Landing Page*%0A%0A*Nome:* ${name}%0A*E-mail:* ${email}%0A*Telefone:* ${phone}%0A*Área de Atuação:* ${area}%0A*Produto/Serviço:* ${product}%0A*Objetivo Principal:* ${objective}%0A%0AGostaria de saber mais sobre a oferta de landing pages que convertem!`;
+            
+            // Show success modal
+            document.getElementById('successModal').classList.remove('hidden');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Close Modal
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('successModal').classList.add('hidden');
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
